@@ -16,7 +16,7 @@ def calculate_annual_income_tax(annual_salary, tax_rates=DEFAULT_TAX_RATES):
 
 def round_number(num, rounding_digits=DEFAULT_ROUNDING_DIGITS):
     if(rounding_digits==0):
-        return int(round(num))
+        return round(num)
     return round(num, rounding_digits)
     
 def caculate_pay_slip(annual_salary, tax_rates=DEFAULT_TAX_RATES, rounding_digits=DEFAULT_ROUNDING_DIGITS):
@@ -43,7 +43,7 @@ if __name__ == "__main__":
         print(f'Gross Monthly Income: ${pay_slip["gross_monthly_income"]}')
         print(f'Monthly Income Tax: ${pay_slip["monthly_income_tax"]}')
         print(f'Net Monthly Income: ${pay_slip["net_monthly_income"]}')
-    except ValueError:
+    except ValueError:        
         print(f'{sys.argv[2]} is not an number!')
         print('Sample command: python3 GenerateMonthlyPayslip.py "Mary Song" 60000')
     except Exception as e:
