@@ -21,13 +21,13 @@ def round_number(num, rounding_digits=DEFAULT_ROUNDING_DIGITS):
     
 def caculate_pay_slip(annual_salary, tax_rates=DEFAULT_TAX_RATES, rounding_digits=DEFAULT_ROUNDING_DIGITS):
     gross_monthly_income = annual_salary / MONTHS_PER_YEAR
-    annual_income_tax = calculate_annual_income_tax(annual_salary=annual_salary)
+    annual_income_tax = calculate_annual_income_tax(annual_salary=annual_salary, tax_rates=tax_rates)
     monthly_income_tax = annual_income_tax / MONTHS_PER_YEAR
     net_monthly_income = gross_monthly_income - monthly_income_tax
     return {
-        'gross_monthly_income': round_number(gross_monthly_income, rounding_digits),
-        'monthly_income_tax': round_number(monthly_income_tax, rounding_digits),
-        'net_monthly_income': round_number(net_monthly_income, rounding_digits)
+        'gross_monthly_income': round_number(num=gross_monthly_income, rounding_digits=rounding_digits),
+        'monthly_income_tax': round_number(num=monthly_income_tax, rounding_digits=rounding_digits),
+        'net_monthly_income': round_number(num=net_monthly_income, rounding_digits=rounding_digits)
     }
 
 if __name__ == "__main__":
