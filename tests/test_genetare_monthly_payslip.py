@@ -31,7 +31,6 @@ def test_calculate_annual_income_tax_decimal():
     ]
     for i in range(len(test_annual_salary_cases)):
         salary = test_annual_salary_cases[i]
-        print(salary)
         tax_rate = g.calculate_annual_income_tax(annual_salary=salary+1) - g.calculate_annual_income_tax(annual_salary=salary) 
         assert expected_annual_tax_results[i] == round(10*tax_rate)
 
